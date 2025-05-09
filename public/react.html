@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Reactを直接呼ぶ</title>
+</head>
+
+<body>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  直接HTMLから呼ぶ
+  <div id="root"></div>
+  <script type="jsx">
+    function SampleButton() {
+      const [num, setNum] = React.useState(0);
+      return (<button onClick={() => setNum((v) => v + 1)}>V:{num}</button>);
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<>test<SampleButton /></>);
+  </script>
+</body>
+
+</html>
