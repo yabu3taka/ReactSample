@@ -1,0 +1,27 @@
+# sequelizeの使い方
+
+## "Please install sqlite3 package manually" で new Sequelize に失敗する場合
+
+dialectModule に直接モジュールを設定する。
+
+const config = { "storage": "data/development.db", "dialect": "sqlite" }
+const configDialect = { dialectModule: require('sqlite3'), ...config };
+let sequelize = new Sequelize(config.database, config.username, config.password, configDialect);
+
+## "npx sequelize-cli db:migrate" で作成された models/index.js はそのままでは使えない
+
+dialectModule の設定が必要な場合がある。
+
+const configDialect = { dialectModule: require('sqlite3'), ...config };
+
+Next.js では、__filename は使えないので、直接値を与える必要がある。
+
+const basename = "index.js";
+fs.readdirSync("./models")
+require("@/models/" + path.basename(file, path.extname(file)))
+
+
+# node-gyp バイナリコンパイルに失敗するとき
+
+ビルドに失敗してインストールできない場合は VisualStudioBuildTools に次をインストールすること
+  "Spectre 軽減ライブラリ" 

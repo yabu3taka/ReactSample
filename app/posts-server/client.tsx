@@ -8,7 +8,7 @@ import { createPostDefValues, PostFormNameInput, PostFormSubmitButton } from '@/
 import { PostInPageFormLink, usePostInPageFormInfoContext } from '@/app/_common/client-posts-inpage';
 import { usePostSearchedListByQueryWithContext, usePostTargetByQuery, PostFormProviderForQuery, PostFormDeleteLinkForQuery } from '@/app/_common/client-posts-query';
 
-import { Post } from '@/lib/db-posts'
+import { Post } from '@/lib/db-posts-type'
 
 /**
  * リストに表示

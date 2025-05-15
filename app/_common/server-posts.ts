@@ -8,7 +8,7 @@ import { revalidatePostList, revalidatePostOne } from '@/api/posts/interface-ser
 
 import { createPostData, updatePostData, deletePostData } from '@/lib/db-posts';
 
-import { PostBody } from '@/lib/db-posts'
+import { PostBody } from '@/lib/db-posts-type'
 
 /**
  * データを作成・更新する。

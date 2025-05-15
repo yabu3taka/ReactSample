@@ -1,4 +1,5 @@
-import { getPostData, deletePostData, updatePostData, PostBody } from '@/lib/db-posts';
+import { getPostData, deletePostData, updatePostData} from '@/lib/db-posts';
+import { PostBody } from '@/lib/db-posts-type';
 
 /**
  * 指定Idのデータを取得

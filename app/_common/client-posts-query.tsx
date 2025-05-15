@@ -14,7 +14,7 @@ import { submitPostOnServer, deletetPostOnServer } from './server-posts';
 
 import { fetchSearchedPostList, fetchPostData, fetchSearchedCount } from '@/api/posts/interface';
 
-import { PostBody } from '@/lib/db-posts'
+import { PostBody } from '@/lib/db-posts-type'
 
 /**
  * useQueryで使用する QueryClient

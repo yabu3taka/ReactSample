@@ -9,7 +9,7 @@ import { PostInPageFormLink, usePostInPageFormInfoContext } from '@/app/_common/
 import { usePostSearchedListByQueryWithContext, usePostTargetByQuery, PostFormDeleteLinkForQuery } from '@/app/_common/client-posts-query';
 import { PostFormProviderForQueryByAPI } from '@/app/_common/client-posts-api';
 
-import { Post } from '@/lib/db-posts'
+import { Post } from '@/lib/db-posts-type'
 
 /**
  * リストに表示

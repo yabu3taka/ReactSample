@@ -1,37 +1,22 @@
 /**
  * Postモデル
  */
+'use server'
 
-import { openDatabase } from '@/lib/db';
+import { Post, PostBody } from "@/lib/db-posts-type";
 
-/**
- * Postモデル(Idなし)
- */
-export interface PostBody {
-	/**
-	 * 名前
-	 */
-	name: string;
-}
+import db from '@/models/index';
+const PostModel = db["Post"];
 
-/**
- * Postモデル(Id付き)
- * @extends PostBody
- */
-export interface Post extends PostBody {
-	/**
-	 * Id
-	 */
-	id: number;
-}
+const { Op } = require("sequelize");
+
 
 /**
  * 全データのリストを得る
  * @returns Postのリスト
  */
 export async function getPostList() {
-	const db = await openDatabase();
-	const list = await db.all('SELECT * FROM post');
+	const list = await PostModel.findAll();
 	return (list ?? []) as Post[];
 }
 
@@ -43,28 +28,21 @@ export async function getPostList() {
  * @returns Postのリスト
  */
 export async function searchPostList({ word, offset, limit }: { word?: string, offset?: number, limit?: number }) {
-	const db = await openDatabase();
-	let sql = "";
-	const params = [] as (string | number)[];
+	const where = {};
+	const param = {};
 
 	if (word) {
-		sql += ' where name like ?';
-		params.push('%' + word + '%');
+		where["name"] = {[Op.like]: '%' + word + '%'};
+		param["where"] = where;
 	}
-
-	sql += ' limit ?';
 	if (limit) {
-		params.push(limit);
-	} else {
-		params.push(-1);
+		param["limit"] = limit;
 	}
-
 	if (offset) {
-		sql += ' offset ?';
-		params.push(offset);
+		param["offset"] = offset;
 	}
 
-	const list = await db.all('SELECT * FROM post ' + sql, ...params);
+	const list = await PostModel.findAll(param);
 	return (list ?? []) as Post[];
 }
 
@@ -74,16 +52,15 @@ export async function searchPostList({ word, offset, limit }: { word?: string, o
  * @returns データ数 
  */
 export async function countPost({ word }: { word?: string }) {
-	const db = await openDatabase();
-	let sql = "";
-	const params = [] as (string | number)[];
+	const where = {};
+	const param = {};
 
 	if (word) {
-		sql += ' where name like ?';
-		params.push('%' + word + '%');
+		where["name"] = {[Op.like]: '%' + word + '%'};
+		param["where"] = where;
 	}
 
-	const { num } = (await db.get('SELECT count(*) as num FROM post ' + sql, ...params)) as { num: number };
+	const num = await PostModel.count(param);
 	return num;
 }
 
@@ -93,8 +70,7 @@ export async function countPost({ word }: { word?: string }) {
  * @returns データ
  */
 export async function getPostData(id: number | string) {
-	const db = await openDatabase();
-	const data = await db.get<Post>('SELECT * FROM post where id = ?', id);
+	const data = await PostModel.findOne({ where: { id } });
 	return data;
 }
 
@@ -103,8 +79,7 @@ export async function getPostData(id: number | string) {
  * @param data - 作成するデータ
  */
 export async function createPostData(data: PostBody) {
-	const db = await openDatabase();
-	await db.run('INSERT INTO post (name) values(?)', data.name);
+	await PostModel.create(data);
 }
 
 /**
@@ -113,8 +88,9 @@ export async function createPostData(data: PostBody) {
  * @param id - Id
  */
 export async function updatePostData(data: PostBody, id: number | string) {
-	const db = await openDatabase();
-	await db.run('UPDATE post SET name = ? WHERE id = ?', data.name, id);
+	const m = await PostModel.findOne({ where: { id } });
+	m.name = data.name;
+	await m.save();
 }
 
 /**
@@ -122,6 +98,8 @@ export async function updatePostData(data: PostBody, id: number | string) {
  * @param id - 削除するId
  */
 export async function deletePostData(id: number | string) {
-	const db = await openDatabase();
-	await db.run('DELETE FROM post where id = ?', id);
+	const m = await PostModel.findOne({ where: { id } });
+	if (m != null) {
+		await m.destroy();
+	}
 }

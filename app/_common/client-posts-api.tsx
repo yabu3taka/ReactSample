@@ -13,7 +13,7 @@ import { QueryKey } from './client-posts-query';
 
 import { createPost, updatePost, deletePost } from '@/api/posts/interface';
 
-import { PostBody } from '@/lib/db-posts'
+import { PostBody } from '@/lib/db-posts-type'
 
 /**
  * REST API を使って登録・更新するフォーム

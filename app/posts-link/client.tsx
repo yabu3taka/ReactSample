@@ -9,7 +9,7 @@ import Link from 'next/link'
 import { usePostSearchedList, createPostDefValues, PostFormNameInput, PostFormSubmitButton } from '@/app/_common/client-posts';
 import { PostFormProviderLink } from '@/app/_common/client-posts-link';
 
-import { Post } from '@/lib/db-posts'
+import { Post } from '@/lib/db-posts-type'
 
 /**
  * 追加フォームを表示するリンク

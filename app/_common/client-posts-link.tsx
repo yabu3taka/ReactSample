@@ -7,7 +7,7 @@
 import { ReactNode } from 'react';
 import { useForm, FormProvider, SubmitHandler } from 'react-hook-form';
 
-import { PostBody } from '@/lib/db-posts'
+import { PostBody } from '@/lib/db-posts-type'
 
 /**
  * 標準のFormと同じようにPOSTで送り、登録・更新するフォーム

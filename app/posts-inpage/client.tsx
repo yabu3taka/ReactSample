@@ -9,7 +9,7 @@ import { use } from 'react';
 import { usePostSearchedList, usePostTargetByEffect, createPostDefValues, PostFormProvider, PostFormNameInput, PostFormSubmitButton } from '@/app/_common/client-posts';
 import { PostInPageFormLink, PostInPageFormDeleteLink, usePostInPageFormInfoContext } from '@/app/_common/client-posts-inpage';
 
-import { Post } from '@/lib/db-posts'
+import { Post } from '@/lib/db-posts-type'
 
 /**
  * リストに表示

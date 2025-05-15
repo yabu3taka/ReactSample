@@ -8,7 +8,7 @@ import { use, useState, useMemo, createContext, useEffect, ReactNode } from 'rea
 import { useFormStatus } from "react-dom";
 import { useForm, FormProvider, useFormContext, SubmitHandler } from 'react-hook-form';
 
-import { Post, PostBody } from '@/lib/db-posts'
+import { Post, PostBody } from '@/lib/db-posts-type'
 import { submitPostOnServer } from './server-posts';
 
 import { fetchPostData } from '@/api/posts/interface';
