@@ -13,12 +13,12 @@ APPルーティングで作成しています。
 
 /components 内に共通モジュールを作成しています。
 
-1. client-posts.tsx: 一覧や編集フォームのモジュール
-2. client-posts.inpage.tsx: ページ移動なしのPosts入力フォーム表示のモジュール
-3. client-posts-link.tsx: ページ移動ありのPosts入力フォーム表示のモジュール
-4. client-posts-query.tsx: useQueryを使用した一覧表示のモジュール
+1. posts.tsx: 一覧や編集フォームのモジュール
+2. posts.inpage.tsx: ページ移動なしのPosts入力フォーム表示のモジュール
+3. posts-link.tsx: ページ移動ありのPosts入力フォーム表示のモジュール
+4. posts-query.tsx: useQueryを使用した一覧表示のモジュール
    検索にヒットしたデータのみサーバから送るようになっている。
-5. client-posts-api.tsx: REST APIを使ってPostsを編集・削除するモジュール
+5. posts-api.tsx: REST APIを使ってPostsを編集・削除するモジュール
 6. server-posts.ts: Postsの編集・削除のためのサーバAPI(use server)
 
 /api/posts/ に REST APIがあります。
