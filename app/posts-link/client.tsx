@@ -6,8 +6,8 @@
 
 import Link from 'next/link'
 
-import { usePostSearchedList, createPostDefValues, PostFormNameInput, PostFormSubmitButton } from '@/app/_common/client-posts';
-import { PostFormProviderLink } from '@/app/_common/client-posts-link';
+import { usePostSearchedList, createPostDefValues, PostFormNameInput, PostFormSubmitButton } from '@/components/client-posts';
+import { PostFormProviderLink } from '@/components/client-posts-link';
 
 import { Post } from '@/lib/db-posts-type'
 

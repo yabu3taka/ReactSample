@@ -7,7 +7,7 @@
 
 import { use, useState, createContext, ReactNode } from 'react';
 
-import { deletetPostOnServer } from '@/app/_common/server-posts';
+import { deletetPostOnServer } from '@/components/server-posts';
 
 /**
  * フォーム情報

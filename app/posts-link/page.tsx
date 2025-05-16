@@ -1,6 +1,6 @@
 import { PostSearchedList, PostFormCreateLink, PostForm } from './client';
-import { PostThemeProvider, PostListArea, PostFormArea } from '@/app/_common/client-theme';
-import { PostSearchTextProvider, PostSearchTextInput, PostSearchTextDisplay } from '@/app/_common/client-posts';
+import { PostThemeProvider, PostListArea, PostFormArea } from '@/components/client-theme';
+import { PostSearchTextProvider, PostSearchTextInput, PostSearchTextDisplay } from '@/components/client-posts';
 
 import { fetchPostList } from '@/api/posts/interface';
 
