@@ -1,8 +1,8 @@
 import { PostSearchedList, PostForm } from './client';
-import { PostThemeProvider, PostFormArea, PostListArea } from '@/components/client-theme';
-import { PostSearchTextProvider, PostSearchTextInput, PostSearchTextDisplay } from '@/components/client-posts';
-import { PostInPageFormProvider, PostInPageFormLink, PostInPageFormIfDisplay } from '@/components/client-posts-inpage';
-import { PostOffsetInput, PostLimitInput, PostOffsetLimitProvider, PostQueryProvider } from '@/components/client-posts-query';
+import { PostThemeProvider, PostFormArea, PostListArea } from '@/components/posts-theme';
+import { PostSearchTextProvider, PostSearchTextInput, PostSearchTextDisplay } from '@/components/posts';
+import { PostInPageFormProvider, PostInPageFormLink, PostInPageFormIfDisplay } from '@/components/posts-inpage';
+import { PostOffsetInput, PostLimitInput, PostOffsetLimitProvider, PostQueryProvider } from '@/components/posts-query';
 
 import { ReactNode, Suspense } from 'react';
 

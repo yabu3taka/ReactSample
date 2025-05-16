@@ -6,8 +6,8 @@
 
 import { use } from 'react';
 
-import { usePostSearchedList, usePostTargetByEffect, createPostDefValues, PostFormProvider, PostFormNameInput, PostFormSubmitButton } from '@/components/client-posts';
-import { PostInPageFormLink, PostInPageFormDeleteLink, usePostInPageFormInfoContext } from '@/components/client-posts-inpage';
+import { usePostSearchedList, usePostTargetByEffect, createPostDefValues, PostFormProvider, PostFormNameInput, PostFormSubmitButton } from '@/components/posts';
+import { PostInPageFormLink, PostInPageFormDeleteLink, usePostInPageFormInfoContext } from '@/components/posts-inpage';
 
 import { Post } from '@/lib/db-posts-type'
 

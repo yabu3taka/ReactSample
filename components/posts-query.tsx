@@ -9,7 +9,7 @@ import { use, useState, useCallback, createContext, ReactNode } from 'react';
 import { useQuery, useSuspenseQuery, QueryClient, QueryClientProvider, useMutation } from '@tanstack/react-query'
 import { useForm, FormProvider, SubmitHandler } from 'react-hook-form';
 
-import { SearchTextContext, SearchTextDispatchContext, PostSearchTextProvider } from './client-posts';
+import { SearchTextContext, SearchTextDispatchContext, PostSearchTextProvider } from './posts';
 import { submitPostOnServer, deletetPostOnServer } from './server-posts';
 
 import { fetchSearchedPostList, fetchPostData, fetchSearchedCount } from '@/api/posts/interface';

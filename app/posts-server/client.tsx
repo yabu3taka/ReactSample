@@ -4,9 +4,9 @@
 
 'use client'
 
-import { createPostDefValues, PostFormNameInput, PostFormSubmitButton } from '@/components/client-posts';
-import { PostInPageFormLink, usePostInPageFormInfoContext } from '@/components/client-posts-inpage';
-import { usePostSearchedListByQueryWithContext, usePostTargetByQuery, PostFormProviderForQuery, PostFormDeleteLinkForQuery } from '@/components/client-posts-query';
+import { createPostDefValues, PostFormNameInput, PostFormSubmitButton } from '@/components/posts';
+import { PostInPageFormLink, usePostInPageFormInfoContext } from '@/components/posts-inpage';
+import { usePostSearchedListByQueryWithContext, usePostTargetByQuery, PostFormProviderForQuery, PostFormDeleteLinkForQuery } from '@/components/posts-query';
 
 import { Post } from '@/lib/db-posts-type'
 
