@@ -11,7 +11,7 @@ APPルーティングで作成しています。
 3. posts-server：検索やページングをサーバに問い合わせる。
 4. posts-api: 編集や削除をREST-APIで行う。
 
-/app/_common 内に共通モジュールを作成しています。
+/components 内に共通モジュールを作成しています。
 
 1. client-posts.tsx: 一覧や編集フォームのモジュール
 2. client-posts.inpage.tsx: ページ移動なしのPosts入力フォーム表示のモジュール
