@@ -8,7 +8,7 @@ import { Post, PostBody } from "@/lib/db-posts-type";
 import db from '@/models/index';
 const PostModel = db["Post"];
 
-const { Op } = require("sequelize");
+import { Op } from "sequelize";
 
 
 /**
