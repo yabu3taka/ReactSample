@@ -38,6 +38,7 @@ const configDialect = { dialectModule: require('sqlite3'), ...config };
 ```
 
 Next.js では、__filename は使えないので、直接値を与える必要がある。
+webpackにより別名のファイルにひとまとめにされるので。
 
 ```
 const basename = "index.js";
