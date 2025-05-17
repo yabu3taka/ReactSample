@@ -4,22 +4,46 @@
 
 dialectModule に直接モジュールを設定する。
 
+```
 const config = { "storage": "data/development.db", "dialect": "sqlite" }
 const configDialect = { dialectModule: require('sqlite3'), ...config };
 let sequelize = new Sequelize(config.database, config.username, config.password, configDialect);
+```
+
+webpackのexternal設定でも良いかも
+
+```next.config.ts
+const nextConfig: NextConfig = {
+  webpack: (
+    config,
+    { buildId, dev, isServer, defaultLoaders, nextRuntime, webpack }
+  ) => {
+    if (isServer) {
+      config.externals = [
+        ...config.externals,
+        { 'sqlite3': 'commonjs sqlite3', }
+      ];
+    }
+    return config
+  },
+};
+```
 
 ## "npx sequelize-cli db:migrate" で作成された models/index.js はそのままでは使えない
 
 dialectModule の設定が必要な場合がある。
 
+```
 const configDialect = { dialectModule: require('sqlite3'), ...config };
+```
 
 Next.js では、__filename は使えないので、直接値を与える必要がある。
 
+```
 const basename = "index.js";
 fs.readdirSync("./models")
 require("@/models/" + path.basename(file, path.extname(file)))
-
+```
 
 # node-gyp バイナリコンパイルに失敗するとき
 
