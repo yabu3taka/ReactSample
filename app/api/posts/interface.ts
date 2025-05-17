@@ -2,7 +2,7 @@
  * /api/posts/ REST API を呼ぶ関数
  */
 
-import { PostBody } from '@/lib/db-posts';
+import { PostBody } from '@/lib/db-posts-type';
 
 const MY_API_PATH = process.env.NEXT_PUBLIC_API_PATH + '/posts';
 

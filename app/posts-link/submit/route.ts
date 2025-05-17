@@ -2,7 +2,7 @@
 import { createPostData, updatePostData } from '@/lib/db-posts';
 import { revalidatePostList, revalidatePostOne } from '@/api/posts/interface-server'
 
-import { PostBody } from '@/lib/db-posts'
+import { PostBody } from '@/lib/db-posts-type'
 
 import { redirect } from "next/navigation";
 

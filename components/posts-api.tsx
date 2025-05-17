@@ -8,8 +8,8 @@ import { use, ReactNode } from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useForm, FormProvider, SubmitHandler } from 'react-hook-form';
 
-import { SearchTextDispatchContext } from './client-posts';
-import { QueryKey } from './client-posts-query';
+import { SearchTextDispatchContext } from './posts';
+import { QueryKey } from './posts-query';
 
 import { createPost, updatePost, deletePost } from '@/api/posts/interface';
 
