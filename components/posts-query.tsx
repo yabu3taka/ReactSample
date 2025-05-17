@@ -186,7 +186,7 @@ export function usePostTargetByQuery(id: number) {
  * @returns フォーム JSX
  */
 export function PostFormProviderForQuery({ editId = null, defaultValues, children }: { editId?: number | null, defaultValues: PostBody, children: ReactNode }) {
-    const methods = useForm({ defaultValues });
+    const methods = useForm({ values: defaultValues, defaultValues });
     const { handleSubmit } = methods;
 
     const setSearchText = use(SearchTextDispatchContext);
