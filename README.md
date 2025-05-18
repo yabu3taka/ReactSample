@@ -4,14 +4,14 @@ APPルーティングで作成しています。
 
 ## CRUDプログラム(Posts)
 
-次の様なサンプルがあります。
+サンプルページ (/app内)
 
 1. posts-link: 編集や削除などを画面移動で行う。
 2. posts-inpage：編集や削除を画面移動無で行う。
 3. posts-server：検索やページングをサーバに問い合わせる。
 4. posts-api: 編集や削除をREST-APIで行う。
 
-/components 内に共通モジュールを作成しています。
+共通コンポーネント (/components内)
 
 1. posts.tsx: 一覧や編集フォームのモジュール
 2. posts.inpage.tsx: ページ移動なしのPosts入力フォーム表示のモジュール
@@ -21,14 +21,19 @@ APPルーティングで作成しています。
 5. posts-api.tsx: REST APIを使ってPostsを編集・削除するモジュール
 6. server-posts.ts: Postsの編集・削除のためのサーバAPI(use server)
 
-/api/posts/ に REST APIがあります。
+REST API (/app/api/posts/ 内)
 interface.ts や interface-server.ts はREST APIにアクセスするためのライブラリです。
 
-lib/にPostsのDB保存機能があります。
+DBアクセス機能など (/lib 内)
+
+Sequelizeのフォルダ
+ - /models/ : モデル
+ - /seeders/ : 初期データ
+ - /migrations/ : マイグレーション
 
 ## その他
 
-/app/sample/ は雑多なサンプルです。
+/app/sample/ に雑多なサンプル
 
 ## メモ
 
