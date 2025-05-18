@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 
 import { BackButton } from "@/components/back";
 import { PathNotEqual } from "@/components/path";
+import { SignInButton } from "@/components/signin";
 import Link from 'next/link'
-
-import { auth } from "@/auth";
 
 import "./globals.css";
 
@@ -27,13 +26,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			</body>
 		</html>
 	);
-}
-
-export async function SignInButton() {
-	const session = await auth();
-	if (session?.user) {
-		return (<Link href="/signout" className="button">SignOut</Link>);
-	} else {
-		return (<Link href="/signin" className="button">SignIn</Link>);
-	}
 }
