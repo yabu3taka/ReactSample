@@ -8,6 +8,7 @@ export default function Home() {
         <Link href="/posts-inpage">2. Posts[ページ移動なし]</Link><br />
         <Link href="/posts-server">3. Posts[useQuery]</Link><br />
         <Link href="/posts-api">4. Posts[REST API]</Link><br />
+        <Link href="/posts-perm">5. Posts[Perm]</Link><br />
       </section>
       <hr />
       <section>
