@@ -82,4 +82,4 @@ url = await signIn("credentials", { ...formData, redirect: false, redirectTo: "/
 # node-gyp バイナリコンパイルに失敗するとき
 
 ビルドに失敗してインストールできない場合は VisualStudioBuildTools に次をインストールすること
-- Spectre 軽減ライブラリ
+ - Spectre 軽減ライブラリ
