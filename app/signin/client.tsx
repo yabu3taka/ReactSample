@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { useSearchParams } from 'next/navigation'
+
 import { signInHandler } from './server';
 
 export function SignInForm() {
@@ -10,10 +12,13 @@ export function SignInForm() {
     const methods = useForm({ defaultValues });
     const { handleSubmit, register, formState: { errors } } = methods;
 
+    const searchParams = useSearchParams();
+    const callbackUrl = searchParams.get('callbackUrl')
+
     const [error, setError] = useState("");
 
     const internalOnCommit: SubmitHandler<typeof defaultValues> = async (formData) => {
-        const result = await signInHandler(formData);
+        const result = await signInHandler(formData, callbackUrl);
         if (result === false) {
             setError("ログイン失敗");
         }
