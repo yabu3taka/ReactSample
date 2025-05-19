@@ -48,6 +48,7 @@ export function useErrorMessage() {
 
 /**
  * エラーメッセージを設定する関数を得るHook
+ * @returns エラーメッセージを設定する関数
  */
 export function useErrorMessageDispatcher() {
     const func = use(ErrorMessageDispatchContext);

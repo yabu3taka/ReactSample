@@ -9,13 +9,12 @@ import { redirect } from "next/navigation";
  * @param formData - ログイン情報
  * @returns false=エラー
  */
-export async function signInHandler(formData: { email: string, password: string }, callbackUrl: string) {
+export async function signInHandler(formData: { email: string, password: string }, callbackUrl: string | null) {
     const url = callbackUrl == null ? "/" : callbackUrl;
     try {
         await signIn("credentials", { ...formData, redirect: false })
     } catch (e) {
         return false;
     }
-    console.log(url);
     redirect(url);
 }

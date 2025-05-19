@@ -2,6 +2,10 @@
 
 import { useRouter } from 'next/navigation';
 
+/**
+ * 戻るボタン
+ * @returns JSX
+ */
 export function BackButton() {
     const router = useRouter();
     return (

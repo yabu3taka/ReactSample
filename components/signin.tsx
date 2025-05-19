@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { auth, signOut } from "@/auth";
 
 /**
- * サインイン/サインアウト ボタンを表示
+ * サインイン/サインアウト ボタン
  * @returns JSX
  */
 export async function SignInButton() {
