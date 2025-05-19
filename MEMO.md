@@ -54,7 +54,33 @@ fs.readdirSync("./models")
 require("@/models/" + path.basename(file, path.extname(file)))
 ```
 
+# Auth.js の使い方
+
+## サーバサイド関数の例外はサーバサイドで処理する
+
+ログイン失敗時に例外が発生する場合はサーバサイド内でcatchし通常のreturnで返す。
+https://nextjs.org/docs/app/building-your-application/routing/error-handling#handling-expected-errors-from-server-components
+
+```
+"use server"
+try {
+    url = await signIn("credentials", { ...formData, redirect: false, redirectTo: "/" })
+} catch (e) {
+    return false;
+}
+```
+## リダイレクト(redirect関数)は例外を発生させる
+
+redirect関数を呼ぶとそこで例外を発生させてリダイレクトを実現している。そのためtry-catchでキャッチしてしてしまう。
+
+次の様にredirect:falseにして、try-catch外でredirectする。
+
+```
+url = await signIn("credentials", { ...formData, redirect: false, redirectTo: "/" })
+```
+
 # node-gyp バイナリコンパイルに失敗するとき
 
 ビルドに失敗してインストールできない場合は VisualStudioBuildTools に次をインストールすること
   "Spectre 軽減ライブラリ" 
+
