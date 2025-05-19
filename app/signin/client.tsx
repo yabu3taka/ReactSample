@@ -12,11 +12,9 @@ export function SignInForm() {
 
     const [error, setError] = useState("");
 
-
     const internalOnCommit: SubmitHandler<typeof defaultValues> = async (formData) => {
-        try {
-            await signInHandler(formData);
-        } catch (e) {
+        const result = await signInHandler(formData);
+        if (result === false) {
             setError("ログイン失敗");
         }
     }

@@ -21,7 +21,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                 }).then((res) => res.json());
 
                 if (!user) {
-                    throw new Error("ログイン失敗");
+                    return null;
                 }
                 return user;
             },
