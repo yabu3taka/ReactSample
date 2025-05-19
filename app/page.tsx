@@ -12,6 +12,7 @@ export default function Home() {
       </section>
       <hr />
       <section>
+        <Link href="/need">要ログインページ</Link><br />
         <Link href="/sample/domref">Dom-Ref</Link><br />
         <Link href="/sample/rendering">レンダリング1</Link>　
         <Link href="/sample/rendering2">レンダリング2</Link>　

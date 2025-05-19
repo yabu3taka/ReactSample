@@ -21,12 +21,18 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                 }).then((res) => res.json());
 
                 if (!user) {
-                    throw new Error("Invalid credentials.");
+                    throw new Error("ログイン失敗");
                 }
                 return user;
             },
         }),
     ],
+    callbacks: {
+        authorized: async ({ auth }) => {
+            // ログインしていなければログインページへ
+            return !!auth
+        },
+    },
     pages: {
         signIn: "/signin",
     },
