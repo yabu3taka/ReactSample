@@ -7,7 +7,7 @@
 import { ReactNode } from 'react';
 import { useQueryClient, useMutation } from '@tanstack/react-query'
 
-import { deleteAllPostsOnServer } from './server-posts-auth';
+import { deleteAllPostsOnServer } from './server-posts-perm';
 import { useErrorMessageDispatcher } from './event-error';
 import { QueryKey } from './posts-query';
 
