@@ -21,12 +21,14 @@ export function PostPermDeleteAllLink({ children }: { children: ReactNode }) {
 
     const queryClient = useQueryClient();
     const mutation = useMutation({
-        mutationFn: async () => { await deleteAllPostsOnServer() },
+        mutationFn: async () => {
+            const result = await deleteAllPostsOnServer();
+            if (!result) {
+                setupErrorMessage("権限がありません");
+            }
+        },
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: QueryKey.all })
-        },
-        onError: () => {
-            setupErrorMessage("権限がありません");
         },
     })
 
